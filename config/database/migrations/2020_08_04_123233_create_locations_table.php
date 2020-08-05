@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateLocationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('locations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('usename');
-            $table->string('password');
-
+            $table->string('country');
+            
             $table->timestamps();
 
             //LLAVE EXTRANJERA (FOREANA) 1 A 1
@@ -29,13 +27,6 @@ class CreateUsersTable extends Migration
             $table->foreignId('profile_id')->constrained()
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-
-            //LLAVE EXTRANJERA (FOREANA) 1 A N NOTACION SIMPLIFICADA
-            $table->foreignId('level_id')->constrained()
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-
         });
     }
 
@@ -46,6 +37,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('locations');
     }
 }

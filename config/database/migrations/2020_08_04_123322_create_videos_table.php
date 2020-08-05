@@ -28,7 +28,7 @@ class CreateVideosTable extends Migration
             $table->foreignId('user_id')->constrained()
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->foreignId('categorie_id')->nullable()->constrained()//nullable( permite nulos)
+            $table->foreignId('category_id')->nullable()->constrained()//nullable( permite nulos)
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 

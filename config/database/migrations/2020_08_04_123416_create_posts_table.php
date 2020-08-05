@@ -28,7 +28,7 @@ class CreatePostsTable extends Migration
             $table->foreignId('user_id')->constrained()
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->foreignId('post_id')->constrained()
+            $table->foreignId('category_id')->constrained()
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });

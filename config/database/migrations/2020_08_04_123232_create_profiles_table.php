@@ -21,14 +21,17 @@ class CreateProfilesTable extends Migration
             
             $table->timestamps();
 
+
             //LLAVE EXTRANJERA (FOREANA) 1 A 1
-            //$table->unsignedBigInteger('location_id');//parametro: minuscula_modeloforeano+"_id"
-            //$table->foreign('location_id')-references('id')->on('locations');//->foreign('parametro')->references('llave_modeloforeano')->on('plural_nombremodelo');
+            //$table->unsignedBigInteger('user_id');//parametro: minuscula_modeloforeano+"_id"
+            //$table->foreign('user_id')-references('id')->on('users');//->foreign('parametro')->references('llave_modeloforeano')->on('plural_nombremodelo');
             
             //Llave extranjera(foreign) 1 a 1 NOTACION SIMPLIFICADA
-            $table->foreignId('location_id')->constrained()
+            $table->foreignId('user_id')->constrained()
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+
+            
             
         });
     }

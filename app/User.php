@@ -27,6 +27,12 @@ class User extends Model
         return $this->hasMany('App\Comment');//direccion modeloforeano
     }
 
+    //REACION 1 A N INVERSO
+    public function level()
+    {
+        return $this->belongsTo('App\Level');
+    }
+
     //RELACION NORMAL N A N (tendra su inverso)
     public function groups()// minuscula_plural_modeloforeano
     {

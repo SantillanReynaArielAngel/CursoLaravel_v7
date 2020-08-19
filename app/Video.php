@@ -11,6 +11,11 @@ class Video extends Model
     {
         return $this->belongsTo('App\User');//direccion modeloforaneo
     }
+    public function categorie()// minuscula modeloforaneo
+    {
+        return $this->belongsTo('App\Categorie');//direccion modeloforaneo
+    }
+
 
     //RELACION POLIMORFICA 1 A 1
    public function image()// minuscula modeloforaneo

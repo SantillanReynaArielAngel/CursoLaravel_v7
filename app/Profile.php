@@ -11,4 +11,10 @@ class Profile extends Model
     {
         return $this->hasOne('App\Location');//direccion del modelo foreano
     }
+
+    //RELACION NORMAL 1 A 1 INVERSO
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

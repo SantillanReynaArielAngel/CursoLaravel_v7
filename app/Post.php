@@ -23,4 +23,14 @@ class Post extends Model
    {
        return $this->morphToMany('App\Tag','taggable');//1er parametro: direccion modeloforaneo. 2do parametro: singular modeloforaneo+'able' (se aumento una g)
    }
+
+   //REALCION 1 A N INVERSO
+   public function categorie()
+   {
+       return $this->belongsTo('App\Categorie');
+   }
+   public function user()
+   {
+       return $this->belongsTo('App\User');
+   }
 }
